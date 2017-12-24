@@ -11,11 +11,11 @@ module.exports = {
       database: 'chat'
     });
     connection.connect();
-    connection.query(queryString, function(error, rows) {
+    connection.query(queryString, message, function(error, rows) {
       if (error) {
         return error;
       }
-      console.log(rows);
+      console.log('inside connection', rows);
       callback(rows);
     });
     connection.end();
