@@ -13,13 +13,13 @@ module.exports = {
     });
     connection.connect();
     connection.query(queryString, message, function(error, rows) {
-      console.log(queryString, message);
+      console.log('in db connection:', queryString, message);
       
       if (error) {
         console.log(error);
       }
       console.log('inside connection', rows);
-      callback(rows);
+      return callback(rows);
     });
     connection.end();
   }

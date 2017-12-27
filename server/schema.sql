@@ -7,7 +7,9 @@ CREATE TABLE messages (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   username INT(10),
   text CHAR(150),
-  roomname INT(10)
+  roomname INT(10),
+  FOREIGN KEY (username) REFERENCES users(name),
+  FOREIGN KEY (roomname) REFERENCES rooms(name)
 );
 
 /* Create other tables and define schemas for them here! */

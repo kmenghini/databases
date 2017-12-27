@@ -8,27 +8,34 @@ module.exports = {
   messages: {
     // a function which handles a get request for all messages
     get: function (req, res) {
-      //http.get()
+      models.messages.get(function(result) {
+        console.log('messages.get....', result);
+      });
       //send get request to get all messages 
-      //models.messages.get(callback)
-
     }, 
     // a function which handles posting a message to the database
     post: function (req, res) {
-      //models.messages.post(message, callback)
+      console.log('test');
+
+      models.messages.post(req.body.username, req.body.text, req.body.roomname, function(results) {
+        return results;
+      });
       console.log(req.body);
     } 
   },
 
   users: {
     get: function (req, res) {
-      //models.users.get(callback)
+      models.users.get(function(result) {
+        console.log('users.get....', result);
+      });
     },
     post: function (req, res) {
-      models.users.post(req.body.username, function(test) {
-        console.log(test);
+      models.users.post(req.body.username, function(results) {
+        console.log(3, results);
+        return;
       });
-      console.log(req.body);
+      // console.log(req.body);
     }
   }
 };
