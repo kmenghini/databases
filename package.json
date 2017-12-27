@@ -20,18 +20,20 @@
     "body-parser": "^1.9.2",
     "eslint": "^4.14.0",
     "express": "^4.16.2",
+    "jquery": "^3.2.1",
     "morgan": "^1.4.1",
     "mysql": "^2.15.0",
     "node": "^9.3.0",
     "request": "^2.83.0",
-    "sequelize": "^3.21.0"
+    "sequelize": "^3.21.0",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
     "babel-preset-es2015": "^6.6.0",
     "babel-register": "^6.7.2",
     "chai": "^3.5.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "eslint-config-hackreactor": "git+https://github.com/reactorcore/eslint-config-hackreactor.git",
     "mocha": "^2.4.5"
   },
   "babel": {

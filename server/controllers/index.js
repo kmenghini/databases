@@ -1,15 +1,31 @@
-var models = require('../models');
+var models = require('../models/index');
+var http = require('http');
+
+
+//**use models/index.js helper functions
 
 module.exports = {
   messages: {
-    get: function (req, res) {}, // a function which handles a get request for all messages
-    post: function (req, res) {} // a function which handles posting a message to the database
+    // a function which handles a get request for all messages
+    get: function (req, res) {
+      //http.get()
+      //send get request to get all messages 
+      //models.messages.get(callback)
+
+    }, 
+    // a function which handles posting a message to the database
+    post: function (req, res) {
+      //models.messages.post(message, callback)
+    } 
   },
 
   users: {
-    // Ditto as above
-    get: function (req, res) {},
-    post: function (req, res) {}
+    get: function (req, res) {
+      //models.users.get(callback)
+    },
+    post: function (req, res) {
+      //models.users.post(message, callback)
+    }
   }
 };
 
