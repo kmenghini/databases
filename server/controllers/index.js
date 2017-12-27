@@ -16,6 +16,7 @@ module.exports = {
     // a function which handles posting a message to the database
     post: function (req, res) {
       //models.messages.post(message, callback)
+      console.log(req.body);
     } 
   },
 
@@ -24,7 +25,10 @@ module.exports = {
       //models.users.get(callback)
     },
     post: function (req, res) {
-      //models.users.post(message, callback)
+      models.users.post(req.body.username, function(test) {
+        console.log(test);
+      });
+      console.log(req.body);
     }
   }
 };

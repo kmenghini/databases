@@ -15,7 +15,7 @@ module.exports = {
     // a function which can be used to insert a message into the database
     //results might be only the message that was recently added, but that's ok bc a get request should follow
     post: function (message, callback) {
-      dbConnect.databaseConnection('INSERT INTO messages SET ?', message, function(results) {
+      dbConnect.databaseConnection('INSERT INTO messages (text) VALUES (?)', message, function(results) {
         console.log('insert message:', results);
         callback(results);
       });
@@ -32,7 +32,7 @@ module.exports = {
       });
     },
     post: function (message, callback) {
-      dbConnect.databaseConnection('INSERT INTO users SET ?', message, function(results) {
+      dbConnect.databaseConnection('INSERT INTO users (name) VALUES (?)', message, function(results) {
         console.log('insert user:', results);
         callback(results);
       });
@@ -47,7 +47,7 @@ module.exports = {
       });
     },
     post: function (message, callback) {
-      dbConnect.databaseConnection('INSERT INTO rooms SET ?', message, function(results) {
+      dbConnect.databaseConnection('INSERT INTO rooms (name) VALUES (?)', message, function(results) {
         console.log('insert room:', results);
         callback(results);
       });

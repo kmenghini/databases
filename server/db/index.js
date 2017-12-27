@@ -5,15 +5,18 @@ var mysql = require('mysql');
 // and to the database "chat".
 
 module.exports = {
-  databaseConnection: function(queryString, callback) {
+  databaseConnection: function(queryString, message, callback) {
+    // console.log(queryString, message);
     var connection = mysql.createConnection({
       user: 'root',
       database: 'chat'
     });
     connection.connect();
     connection.query(queryString, message, function(error, rows) {
+      console.log(queryString, message);
+      
       if (error) {
-        return error;
+        console.log(error);
       }
       console.log('inside connection', rows);
       callback(rows);
